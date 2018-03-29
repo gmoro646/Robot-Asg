@@ -17,4 +17,6 @@ public class DoubleValueMenuOption extends MenuOption
 	}
 
 	public double getData() { return data; }
+
 }
+
