@@ -51,30 +51,39 @@ public class Game {
 					else {
 						System.out.println("Place ignored, wrong amount of arguments->"+"PLACE X,Y,F");
 					}
-					//System.out.println(aRobot.toString());
-					//command = "PLACE";
 					break;
-				case "MOVE":  
-					System.out.println("OPTION MOVE");
-
+				case "MOVE":
+					if(command.length==1) {
+						aRobot.move();
+					}
 					break;
-				case "LEFT":  
-					System.out.println("OPTION LEFT");
+				case "LEFT":
+					if(command.length==1) {
+						aRobot.turnRobot("LEFT");
+						System.out.println("OPTION LEFT");
+					}
 					break;
 				case "RIGHT":  
-					System.out.println("OPTION RIGHT");
+					if(command.length==1) {
+						aRobot.turnRobot("RIGHT");
+
+						System.out.println("OPTION RIGHT");
+					}
 					break;
 				case "REPORT":  
-					System.out.println("OPTION REPORT");
-					System.out.println(aRobot.toString());
+					if(command.length==1) {
+						System.out.println("OPTION REPORT");
+						System.out.println(aRobot.toString());
+					}
 					break;
 				case "QUIT":  
-					System.out.println("OPTION QUIT");
-					quitGame();
+					if(command.length==1) {
+						System.out.println("OPTION QUIT");
+						quitGame();
+					}
 					break;
 				default: 			
 					System.out.println("Invalid option -> "+ command[0].toUpperCase());
-					//command=getUserCommand().toUpperCase().trim();
 					break;
 				}
 
@@ -101,15 +110,9 @@ public class Game {
 		comm.println("QUIT");	
 	}
 	private void quitGame() {
-
+		System.out.println(aRobot.toString());
 		System.exit(0);
 
 	}
-	private boolean checkPlaceString(String value) {
-		boolean val=true;
-		if (value==null) {
-			val=false;
-		}
-		return val;	
-	}
+
 }

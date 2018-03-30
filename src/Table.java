@@ -1,5 +1,5 @@
 import Robot.*;
-
+// class to create a visual interface
 public class Table {
 
 
@@ -33,6 +33,7 @@ public class Table {
 		}
 		return dimensions;
 	}
+	
 
 
 
